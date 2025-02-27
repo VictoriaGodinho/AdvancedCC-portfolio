@@ -116,17 +116,21 @@ ul li a:hover {
 }
 
 .info h1 {
-    font-size: 30px;
+    font-size: 25px;
     color: #ffffff;
 }
 
 .info h3 {
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 55px;
+    letter-spacing: 3px;
     line-height: 24px;
     color: white;
 }
-
+.info h2 {
+    font-size: 25px;
+    color: #ffffff;
+    margin-top: 30px; 
+}
 .info span {
     color: #ffffff;
 }
