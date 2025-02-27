@@ -160,29 +160,50 @@ ul li a:hover {
     text-align: center;
     margin: 20px;
 }
+/* Projects Grid Layout */
+.projects-grid {
+    display: flex; /* Arrange projects in a row */
+    justify-content: center; /* Center align the projects */
+    gap: 10px; /* Space between projects */
+    padding: 10px; /* Reduce padding */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
 
+/* Project Box */
 .project {
-    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background color for each project */
+    padding: 10px; /* Less padding to reduce excess space */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); /* Soft glow for effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    text-align: center; /* Center-align text and iframe */
+    max-width: 500px; /* Limit the width of each project */
+    width: 100%; /* Make it responsive */
+    max-height: 500px; /* Limit the width of each project */
+    height: 100%; /* Make it responsive */
+    margin: 10px; /* Optional margin for spacing */
 }
 
+/* Project iframe adjustments */
 .project iframe {
-    border: none;
-    margin-top: 20px;
     width: 100%;
-    max-width: 800px;
-    height: 400px;
+    height: 400px; 
+    border-radius: 8px; /* Optional rounded corners */
+    margin-bottom: 15px; /* Space between iframe and text */
 }
 
+/* Project title style */
 .project h3 {
     font-size: 24px;
-    color: #ffffff;
+    color: #000000;
+    margin-bottom: 10px; /* Space below the title */
 }
 
-.project p {
-    font-size: 16px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
+/* Reduce gap between projects */
+.projects-grid {
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 .works-info {
@@ -246,18 +267,33 @@ ul li a:hover {
 .contact-links a:hover {
     color: #6142f4;
 }
-
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 20px;
+    display: flex; /* Arrange projects in a row */
+    justify-content: center; /* Center align the projects */
+    gap: 20px; /* Space between projects */
     padding: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .project {
+    text-align: center;
+}
+
+.project iframe {
+    width: 600px; /* Full original canvas width */
+    height: 600px; /* Full original canvas height */
+    transform: scale(0.67); /* Scales down to fit */
+    transform-origin: top left; /* Keeps alignment */
+    border: none;
+}
+
+
+
+
+.project {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
