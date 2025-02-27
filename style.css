@@ -256,3 +256,49 @@ ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* Button Container */
+.prototype-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+/* Button Styling */
+.prototype-button {
+    background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
+    background-size: 300% 300%;
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 30px; /* Padding around the text */
+    border-radius: 50px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    background-position: 0% 50%; /* Start the gradient at a specific point */
+    animation: gradientMovement 5s ease infinite; /* Animation for the gradient */
+}
+
+/* Hover effects */
+.prototype-button:hover {
+    transform: translateY(-5px); /* Lift effect */
+}
+
+/* Active (clicked) effect */
+.prototype-button:active {
+    transform: translateY(2px); /* Slight push down effect on click */
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientMovement {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
