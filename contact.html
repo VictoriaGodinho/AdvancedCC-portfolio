@@ -1,16 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <title>Contact - Victoria Godinho</title>
-   <link rel="stylesheet" href="style.css">
+   <style>
+      /* Reset + structure */
+      html, body {
+         height: 100%;
+         margin: 0;
+         display: flex;
+         flex-direction: column;
+         font-family: 'Inter Variable', sans-serif;
+         background: rgb(0, 0, 0);
+      }
+
+      body, h1, h2, h3, h4, h5, h6, p, li, strong {
+         color: #fff !important;
+      }
+
+      .main {
+         flex: 1; /* pushes footer down */
+      }
+
+      /* Navbar */
+      .navbar {
+         width: 86%;
+         display: flex;
+         margin: auto;
+         padding: 15px 0;
+         align-items: center;
+         justify-content: space-between;
+         z-index: 2;
+      }
+
+      .navbar ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
+
+      .navbar ul li {
+         display: inline-block;
+         padding: 10px 16px;
+      }
+
+      .navbar ul li a {
+         font-size: 16px;
+         font-weight: bold;
+         text-decoration: none;
+         color: #6142f4;
+         margin-top: -3%;
+         transition: 0.4s ease;
+      }
+
+      .navbar ul li a:hover {
+         color: #f442bc !important;
+         transform: scale(1.1);
+      }
+
+      .logo {
+         width: 180px;
+         cursor: pointer;
+         margin-left: -6%;
+         margin-top: 1%;
+      }
+
+      /* Contact container */
+      .contact-info {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 20px;
+         padding: 40px; 
+         margin-top: 40px;
+         max-width: 900px;
+         margin-left: auto;
+         margin-right: auto;
+         line-height: 1.6;
+         text-align: center;
+
+         background: rgba(0, 0, 0, 0.6);
+         border-radius: 12px;
+         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      }
+
+      .contact-info h2 {
+         font-size: 2em;
+         margin-bottom: 10px;
+         position: relative;
+      }
+
+      /* Gradient animated underline */
+      .contact-info h2::after {
+         content: "";
+         display: block;
+         width: 120px;
+         height: 4px;
+         margin: 10px auto 0;
+         border-radius: 2px;
+         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
+         background-size: 300% 300%;
+         animation: gradientShift 5s ease infinite;
+      }
+
+      @keyframes gradientShift {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+      .contact-info p {
+         font-size: 1.1em;
+      }
+
+      .contact-links p {
+         margin: 15px 0;
+      }
+
+      /* Contact links */
+      .contact-links a {
+         color: #f442bc;
+         font-weight: bold;
+         text-decoration: none;
+         transition: all 0.3s ease;
+      }
+
+      .contact-links a:hover {
+         color: #ffb900;
+         transform: scale(1.1);
+      }
+
+      /* Footer */
+      footer {
+         background-color: #6142f4;
+         color: white;
+         display: flex;
+         align-items: center;
+         padding: 10px 20px;
+         font-size: 14px;
+         width: 100%;
+         box-sizing: border-box;
+         font-family: 'Inter Variable', sans-serif;
+      }
+
+      footer .left,
+      footer .right {
+         flex: 1;
+      }
+
+      footer .center {
+         text-align: center;
+      }
+
+      footer .right {
+         text-align: right;
+      }
+
+      footer .right a {
+         color: white;
+         margin-left: 15px;
+         text-decoration: none;
+         font-size: 15px;
+         transition: 0.3s;
+      }
+
+      footer .right a:hover {
+         color: #f442bc;
+      }
+   </style>
 </head>
 <body>
    <div class="main">
+       <!-- Navbar -->
        <div class="navbar">
            <img src="images/logo.png" class="logo">
-
-
            <ul>
                <li><a href="index.html">HOME</a></li>
                <li><a href="about.html">ABOUT</a></li>
@@ -19,20 +182,33 @@
            </ul>
        </div>
 
-
+       <!-- Contact info -->
        <div class="contact-info">
-           <h2>Contact Me</h2>
-
+           <h2>CONTACT ME</h2>
 
            <p>If you'd like to get in touch, feel free to reach out to me through the following platforms:</p>
 
-
            <div class="contact-links">
-               <p><strong>Instagram:</strong> <a href="https://www.instagram.com/vicartz/" target="_blank">Visit my Instagram</a></p>
-               <p><strong>Email:</strong> <a href="mailto:victoriagodinho2005@gmail.com">victoriagodinho2005@gmail.com</a></p>
+               <p><strong>Instagram:</strong> 
+                  <a href="https://www.instagram.com/vicartz/" target="_blank">Visit my artsy Instagram</a>
+               </p>
+               <p><strong>Email:</strong> 
+                  <a href="mailto:victoriagodinho2005@gmail.com">victoriagodinho2005@gmail.com</a>
+               </p>
            </div>
        </div>
    </div>
+
+   <!-- Footer -->
+   <footer>
+      <div class="left">VG</div>
+      <div class="center">© 2025 Victoria Godinho. All rights reserved.</div>
+      <div class="right">
+         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+         <a href="https://github.com" target="_blank">GitHub</a>
+         <a href="mailto:victoriagodinho2005@gmail.com">Email</a>
+      </div>
+   </footer>
 </body>
 </html>
 
