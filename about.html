@@ -1,34 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>About - Victoria Godinho</title>
+   <title>My Portfolio</title>
    <link rel="stylesheet" href="style.css">
+   <style>
+      /* Navbar */
+.navbar {
+    width: 86%;
+    display: flex;
+    margin: auto;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+ul {
+    margin-top: -4%;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 16px;
+}
+
+ul li a {
+    font-family: 'Inter Variable', sans-serif; 
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff; 
+    margin-top: -3%;
+    transition: 0.4s ease;
+}
+
+ul li a:hover {
+    color: #f442bc !important; /* pink hover */
+    transform: scale(1.1); /* smooth grow */
+}
+
+      .logo {
+         width: 180px;
+         cursor: pointer;
+         margin-left: -6%;
+         margin-top: 1%;
+      }
+
+      /* Footer */
+footer {
+    background-color: #6142f4;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 40px;
+    box-sizing: border-box;
+    font-family: 'Inter Variable', sans-serif; /* FIXED font */
+}
+
+footer .left,
+footer .right {
+    flex: 1;
+}
+
+footer .center {
+    text-align: center;
+}
+
+footer .right {
+    text-align: right;
+}
+
+footer .right a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Inter Variable', sans-serif; /* ensure links match */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+footer .right a:hover {
+    color: #f442bc;
+}
+
+   </style>
 </head>
 <body>
+
+   <div class="gradient-container"></div>
+
    <div class="main">
+       <!-- Navbar -->
        <div class="navbar">
-           <img src="images/logo.png" class="logo">
-
-
-           <ul>
+          <img src="images/logo.png" class="logo">
+          <ul>
                <li><a href="index.html">HOME</a></li>
-               <li><a href="about.html">ABOUT</a></li> <!-- Added link for About -->
+               <li><a href="about.html">ABOUT</a></li>
                <li><a href="works.html">MY WORKS</a></li>
-               <li><a href="advancedcc.html">ADVANCEDCC</a></li>
                <li><a href="contact.html">CONTACT</a></li>
-           </ul>
+          </ul>       
        </div>
 
+       <!-- Intro Info -->
+       <div class="info">
+         <h3 class="title-inter">
+            Hi, I am <span>Victoria Godinho</span>.
+         </h3>
+         <h2 class="inter-text">
+            Design & Technology student at Parsons School of Design, NYC.<br>
+            I am interested in UX design, creative coding, and building projects<br> 
+            that combine storytelling, interactivity, and typography.
+         </h2>
+       </div>
 
-       <div class="about-info">
-           <h2>About Me</h2>
-           <p>Hi, my name is Victoria Godinho. I am currently pursuing a degree in Design and Technology at Parsons School of Design (NYC), developing skills at the intersection of creativity and technology. Throughout my coursework and personal projects, I have worked extensively with digital art and tools such as Adobe Suite, Photoshop, Unity, Procreate, as well as programming languages like JavaScript, HTML and CSS.</p>
+       <!-- Image -->
+       <div class="image">
+          <img src="images/me.png" class="me">
        </div>
    </div>
 
-   
+   <!-- Footer -->
+   <footer>
+      <div class="left">VG</div>
+      <div class="center">© 2025 Victoria Godinho. All rights reserved.</div>
+      <div class="right">
+         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+         <a href="https://github.com" target="_blank">GitHub</a>
+         <a href="mailto:victoriagodinho2005@gmail.com">Email</a>
+      </div>
+   </footer>
+
+   <script src="script.js"></script> 
 </body>
 </html>
-
-
-
