@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>The Night We Watched - Victoria Godinho</title>
+   <style>
+      body {
+         position: relative;
+         overflow-x: hidden;
+         overflow-y: auto;
+         margin: 0;
+         font-family: 'Inter Variable', sans-serif;
+         background: rgb(0, 0, 0);
+      }
+
+      body, h1, h2, h3, h4, h5, h6, p, li, strong {
+         color: #fff !important;
+      }
+
+      /* Navbar */
+      .navbar {
+         width: 86%;
+         display: flex;
+         margin: auto;
+         padding: 15px 0;
+         align-items: center;
+         justify-content: space-between;
+         z-index: 2;
+      }
+
+      .navbar ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
+
+      .navbar ul li {
+         display: inline-block;
+         padding: 10px 16px;
+      }
+
+      .navbar ul li a {
+         font-size: 16px;
+         font-weight: bold;
+         text-decoration: none;
+         color: #6142f4;
+         margin-top: -3%;
+         transition: 0.4s ease;
+      }
+
+      .navbar ul li a:hover {
+         color: #f442bc !important;
+         transform: scale(1.1);
+      }
+
+      .logo {
+         width: 180px;
+         cursor: pointer;
+         margin-left: -6%;
+         margin-top: 1%;
+      }
+
+      /* Works Header */
+      .works-info {
+         text-align: center;
+         max-width: 1000px;
+         margin: 40px auto;
+         background: rgba(0, 0, 0, 0.6);
+         border-radius: 12px;
+         padding: 25px;
+         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      }
+
+      .works-info h2 {
+         font-size: 2em;
+         margin: 0;
+      }
+
+      /* Video Section */
+      .video-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 40px;
+          margin: 40px auto;
+          max-width: 1000px;
+          text-align: center;
+      }
+      .video-container h3 {
+          margin-bottom: 15px;
+          font-size: 1.3em;
+          color: #e4507e;
+      }
+      .video-box {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      video {
+          max-width: 90%;
+          max-height: 70vh;
+          border-radius: 12px;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      }
+
+      /* Content Section */
+      .content-section {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 20px;
+          color: #fff;
+          line-height: 1.6;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 12px;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      }
+      .content-section h2 {
+          margin-top: 40px;
+          margin-bottom: 15px;
+          font-size: 1.8em;
+          color: #ffb900;
+      }
+      .content-section h3 {
+          margin-top: 25px;
+          margin-bottom: 10px;
+          font-size: 1.3em;
+          color: #e4507e;
+      }
+
+      /* Progress Images */
+      .progress-images {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+      }
+      .progress-images figure {
+          text-align: center;
+          max-width: 600px;
+      }
+      .progress-images img {
+          width: 100%;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      }
+      .progress-images figcaption {
+          margin-top: 8px;
+          font-size: 0.9em;
+          color: #ddd;
+      }
+
+      /* Gradient Buttons */
+      .prototype-button-container {
+         display: flex;
+         justify-content: center;
+         margin: 30px 0;
+      }
+      .prototype-button {
+         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
+         background-size: 300% 300%;
+         background-position: 0% 50%;
+         animation: gradientMovement 5s ease infinite;
+         color: white;
+         font-size: 18px;
+         font-weight: bold;
+         text-decoration: none;
+         padding: 15px 30px;
+         border-radius: 50px;
+         transition: transform 0.3s ease;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .prototype-button:hover {
+         transform: scale(1.08);
+      }
+      @keyframes gradientMovement {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+      /* Footer */
+      footer {
+         background-color: #6142f4;
+         color: white;
+         display: flex;
+         align-items: center;
+         padding: 10px 20px;
+         font-size: 14px;
+         width: 100%;
+         margin-top: 40px;
+         box-sizing: border-box;
+      }
+      footer .left,
+      footer .right {
+         flex: 1;
+      }
+      footer .center {
+         text-align: center;
+      }
+      footer .right {
+         text-align: right;
+      }
+      footer .right a {
+         color: white;
+         margin-left: 15px;
+         text-decoration: none;
+         font-size: 15px;
+         transition: 0.3s;
+      }
+      footer .right a:hover {
+         color: #f442bc;
+      }
+   </style>
+</head>
+<body>
+   <div class="main">
+       <!-- Navbar -->
+       <div class="navbar">
+           <img src="images/logo.png" class="logo">
+           <ul>
+               <li><a href="index.html">HOME</a></li>
+               <li><a href="about.html">ABOUT</a></li>
+               <li><a href="works.html">MY WORKS</a></li>
+               <li><a href="contact.html">CONTACT</a></li>
+           </ul>
+       </div>
+
+       <!-- Project Title -->
+       <div class="works-info">
+           <h2>“The Night We Watched”</h2>
+       </div>
+
+       <!-- Videos -->
+       <div class="video-container">
+           <div class="video-box">
+               <h3>Final Video</h3>
+               <video controls>
+                   <source src="videos/Finallabandstudio.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+               </video>
+           </div>
+
+           <div class="video-box">
+               <h3>Immersive Experience Video</h3>
+               <video controls>
+                   <source src="videos/IMG_9201.MOV" type="video/mp4">
+                   Your browser does not support the video tag.
+               </video>
+           </div>
+       </div>
+
+       <!-- Logline -->
+       <div class="content-section">
+           <h2>Description</h2>
+           <p>
+               A projection and sound installation that shows a nighttime cityscape through apartment windows, each revealing everyday moments from different lives. Highlighting the quiet, shared experiences that connect us all.
+           </p>
+
+           <!-- Artist Statement -->
+           <h2>Observations</h2>
+           <p>
+               My work explores the quiet intimacy of city life that often goes unnoticed. In New York City, we are a city of strangers but we are constantly surrounded by endless emotions and moments in time that each have their own story. Through projections and sound, I aim to recreate a late night feeling of walking around and looking at the endless windows and wondering what stories are taking place behind them.
+           </p>
+           <p>
+               My installation invites viewers to pause and reflect on these simple human moments; someone washing dishes, a party going crazy, someone falling asleep to the TV. These scenes are made to feel real and familiar and to show how connected we all are. With the projection, the soundscape will blend together city ambiance, individual sounds from the windows and soft jazz to create a gentle yet intriguing immersive atmosphere.
+           </p>
+
+           <!-- Progress -->
+           <h2>Progress</h2>
+           <p>
+               For this project I divided the work into two parts. First I collected the videos for the apartments (by both taking them myself and finding them on Artlist) and worked on the world building and animation. Finally, I made the final editing of the video, making an introduction and an ending to the animation made.
+           </p>
+
+           <div class="progress-images">
+               <figure>
+                   <img src="images/the-night-progress.png" alt="Progress Screenshot">
+                   <figcaption>Progress Screenshot</figcaption>
+               </figure>
+           </div>
+
+           <!-- Back Button -->
+           <div class="prototype-button-container">
+               <a href="unity-projects.html" class="prototype-button">← Back to Unity Projects</a>
+           </div>
+       </div>
+   </div>
+
+   <!-- Footer -->
+   <footer>
+      <div class="left">VG</div>
+      <div class="center">© 2025 Victoria Godinho. All rights reserved.</div>
+      <div class="right">
+         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+         <a href="https://github.com" target="_blank">GitHub</a>
+         <a href="mailto:victoriagodinho2005@gmail.com">Email</a>
+      </div>
+   </footer>
+</body>
+</html>

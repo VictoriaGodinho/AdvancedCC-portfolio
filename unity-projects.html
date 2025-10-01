@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>My Works - Victoria Godinho</title>
+   <title>Unity Projects - Victoria Godinho</title>
    <style>
-      /* Reset + structure */
-      html, body {
-         height: 100%;
+      body {
+         position: relative;
+         overflow-x: hidden;
+         overflow-y: auto;
          margin: 0;
-         display: flex;
-         flex-direction: column;
          font-family: 'Inter Variable', sans-serif;
          background: rgb(0, 0, 0);
       }
 
       body, h1, h2, h3, h4, h5, h6, p, li, strong {
          color: #fff !important;
-      }
-
-      .main {
-         flex: 1; /* pushes footer to bottom */
       }
 
       /* Navbar */
@@ -64,56 +59,43 @@
          margin-top: 1%;
       }
 
-      /* Works container */
+      /* Works Section */
       .works-info {
-         padding: 40px; 
-         margin-top: 40px;
          text-align: center;
-         max-width: 900px;
-         margin-left: auto;
-         margin-right: auto;
-         line-height: 1.6;
-
+         max-width: 1000px;
+         margin: 50px auto;
          background: rgba(0, 0, 0, 0.6);
          border-radius: 12px;
+         padding: 40px;
          box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       }
 
       .works-info h2 {
          font-size: 2em;
          margin-bottom: 20px;
-         position: relative;
       }
 
-      /* Gradient animated underline */
-      .works-info h2::after {
-         content: "";
-         display: block;
-         width: 120px;
-         height: 4px;
-         margin: 10px auto 0;
-         border-radius: 2px;
-         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
-         background-size: 300% 300%;
-         animation: gradientShift 5s ease infinite;
+      .description {
+         font-size: 16px;
+         max-width: 800px;
+         margin: 20px auto 40px auto;
+         text-align: center;
+         line-height: 1.6;
       }
 
-      @keyframes gradientShift {
-         0% { background-position: 0% 50%; }
-         50% { background-position: 100% 50%; }
-         100% { background-position: 0% 50%; }
-      }
-
-      /* Buttons */
+      /* Button Container */
       .prototype-button-container {
          display: flex;
          justify-content: center;
-         margin: 20px 0;
+         margin: 30px 0;
       }
 
+      /* Gradient Buttons */
       .prototype-button {
          background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
          background-size: 300% 300%;
+         background-position: 0% 50%;
+         animation: gradientMovement 5s ease infinite;
          color: white;
          font-size: 18px;
          font-weight: bold;
@@ -122,16 +104,10 @@
          border-radius: 50px;
          transition: transform 0.3s ease;
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-         background-position: 0% 50%;
-         animation: gradientMovement 5s ease infinite;
       }
 
       .prototype-button:hover {
-         transform: translateY(-5px);
-      }
-
-      .prototype-button:active {
-         transform: translateY(2px);
+         transform: scale(1.08);
       }
 
       @keyframes gradientMovement {
@@ -142,40 +118,40 @@
 
       /* Footer */
       footer {
-        background-color: #6142f4;
-        color: white;
-        display: flex;
-        align-items: center;
-        padding: 10px 20px;
-        font-size: 14px;
-        width: 100%;
-        box-sizing: border-box;
-        font-family: 'Inter Variable', sans-serif;
+         background-color: #6142f4;
+         color: white;
+         display: flex;
+         align-items: center;
+         padding: 10px 20px;
+         font-size: 14px;
+         width: 100%;
+         margin-top: 40px;
+         box-sizing: border-box;
       }
 
       footer .left,
       footer .right {
-        flex: 1;
+         flex: 1;
       }
 
       footer .center {
-        text-align: center;
+         text-align: center;
       }
 
       footer .right {
-        text-align: right;
+         text-align: right;
       }
 
       footer .right a {
-        color: white;
-        margin-left: 15px;
-        text-decoration: none;
-        font-size: 15px;
-        transition: 0.3s;
+         color: white;
+         margin-left: 15px;
+         text-decoration: none;
+         font-size: 15px;
+         transition: 0.3s;
       }
 
       footer .right a:hover {
-        color: #f442bc;
+         color: #f442bc;
       }
    </style>
 </head>
@@ -186,27 +162,28 @@
            <img src="images/logo.png" class="logo">
            <ul>
                <li><a href="index.html">HOME</a></li>
-               <li><a href="about.html">ABOUT</a></li>
+               <li><a href="about.html">ABOUT</a></li> 
                <li><a href="works.html">MY WORKS</a></li>
                <li><a href="contact.html">CONTACT</a></li>
            </ul>
        </div>
 
-       <!-- Works -->
+       <!-- Unity Projects -->
        <div class="works-info">
-           <h2>MY WORKS</h2>
+           <h2>Unity Projects</h2>
+           <p class="description">
+              These are projects I built using <strong>Unity</strong>, a game engine and creative software 
+              widely used for developing video games, interactive simulations, and animations. 
+              Both of these works are <strong>animations</strong> I created in Unity, and later refined 
+              and edited using <strong>Adobe Premiere Pro</strong> to add a polished cinematic finish.
+           </p>
 
            <div class="prototype-button-container">
-               <a href="https://victoriagodinho.github.io/Collage_VictoriaGodinho/" 
-                  target="_blank" class="prototype-button">Collage Project (GitHub)</a>
+               <a href="rube-goldberg.html" class="prototype-button">Rube Goldberg Machine</a>
            </div>
 
            <div class="prototype-button-container">
-               <a href="unity-projects.html" class="prototype-button">Unity Projects</a>
-           </div>
-
-           <div class="prototype-button-container">
-               <a href="p5works.html" class="prototype-button">p5.js Projects</a>
+               <a href="the-night-we-watched.html" class="prototype-button">The Night We Watched</a>
            </div>
        </div>
    </div>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>p5.js Works - Victoria Godinho</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+      body {
+         position: relative;
+         overflow-x: hidden;
+         overflow-y: auto;
+         margin: 0;
+         font-family: 'Inter Variable', sans-serif;
+         background: rgb(0, 0, 0);
+      }
+
+      body, h1, h2, h3, h4, h5, h6, p, li, strong {
+         color: #fff !important;
+      }
+
+      /* Navbar */
+      .navbar {
+         width: 86%;
+         display: flex;
+         margin: auto;
+         padding: 15px 0;
+         align-items: center;
+         justify-content: space-between;
+         z-index: 2;
+      }
+      .navbar ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
+      .navbar ul li {
+         display: inline-block;
+         padding: 10px 16px;
+      }
+      .navbar ul li a {
+         font-size: 16px;
+         font-weight: bold;
+         text-decoration: none;
+         color: #6142f4;
+         margin-top: -3%;
+         transition: 0.4s ease;
+      }
+      .navbar ul li a:hover {
+         color: #f442bc !important;
+         transform: scale(1.1);
+      }
+      .logo {
+         width: 180px;
+         cursor: pointer;
+         margin-left: -6%;
+         margin-top: 1%;
+      }
+
+      /* Works Section */
+      .works-info {
+         text-align: center;
+         max-width: 1100px;
+         margin: 50px auto;
+         background: rgba(0, 0, 0, 0.6); /* grey box */
+         border-radius: 12px;
+         padding: 40px;
+         box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      }
+      .works-info h2 {
+         font-size: 2em;
+         margin-bottom: 20px;
+      }
+      .instructions {
+         color: #ffffff;
+         text-align: center;
+         font-size: 16px;
+         max-width: 800px;
+         margin: 20px auto 40px auto;
+         line-height: 1.6;
+      }
+
+      /* Projects Grid */
+      .projects-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px;
+          margin-top: 30px;
+      }
+      .project {
+          background-color: rgb(255, 255, 255);
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          flex: 1 1 400px;
+          max-width: 450px;
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project:hover {
+          transform: translateY(-5px);
+          box-shadow: 
+              0 8px 25px rgba(228, 80, 116, 0.6),
+              0 0 40px rgba(228, 80, 126, 0.7),
+              0 0 80px rgba(228, 80, 126, 0.5);
+      }
+      .project h3 {
+          font-size: 20px;
+          color: #ffb900;
+          margin-bottom: 10px;
+      }
+      .project iframe {
+          width: 600px;
+          height: 600px;
+          border-radius: 8px;
+          border: none;
+          margin-bottom: 15px;
+      }
+      .project p {
+          font-size: 14px;
+          color: #fff;
+          line-height: 1.5;
+      }
+
+      /* Gradient Buttons */
+      .prototype-button-container {
+         display: flex;
+         justify-content: center;
+         margin: 40px 0 0 0;
+      }
+      .prototype-button {
+         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
+         background-size: 300% 300%;
+         background-position: 0% 50%;
+         animation: gradientMovement 5s ease infinite;
+         color: white;
+         font-size: 18px;
+         font-weight: bold;
+         text-decoration: none;
+         padding: 15px 30px;
+         border-radius: 50px;
+         transition: transform 0.3s ease;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .prototype-button:hover {
+         transform: scale(1.08);
+      }
+      @keyframes gradientMovement {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+      /* Footer */
+      footer {
+         background-color: #6142f4;
+         color: white;
+         display: flex;
+         align-items: center;
+         padding: 10px 20px;
+         font-size: 14px;
+         width: 100%;
+         margin-top: 40px;
+         box-sizing: border-box;
+      }
+      footer .left,
+      footer .right {
+         flex: 1;
+      }
+      footer .center {
+         text-align: center;
+      }
+      footer .right {
+         text-align: right;
+      }
+      footer .right a {
+         color: white;
+         margin-left: 15px;
+         text-decoration: none;
+         font-size: 15px;
+         transition: 0.3s;
+      }
+      footer .right a:hover {
+         color: #f442bc;
+      }
+   </style>
+</head>
+<body>
+   <div class="gradient-container"></div>
+
+   <div class="main">
+       <!-- Navbar -->
+       <div class="navbar">
+           <img src="images/logo.png" class="logo">
+           <ul>
+               <li><a href="index.html">HOME</a></li>
+               <li><a href="about.html">ABOUT</a></li>
+               <li><a href="works.html">MY WORKS</a></li>
+               <li><a href="contact.html">CONTACT</a></li>
+           </ul>
+       </div>
+
+       <!-- p5.js Projects -->
+       <div class="works-info">
+           <h2>p5.js Works</h2>
+           <p class="instructions">
+               These are projects created with <strong>p5.js</strong>, a JavaScript library that makes creative coding accessible for artists, designers, and beginners. 
+               It allows you to easily combine code with visual art, animation, and interaction directly in the browser. 
+               My works here explore generative visuals, interactive typography, and playful experiments where you can interact with each sketch by 
+               moving the mouse, clicking, dragging, holding, or pressing keys.
+           </p>
+
+           <div class="projects-grid">
+               <div class="project">
+                   <h3>Typography Project: Waves</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/DuY1GlyTb"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Typography Project: Sand</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/TzrdKJU4l"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Typography Project: Air</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/_EtLiSywZ"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Autobiographical Game</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/XJnKhDjTh"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Optical Illusion</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/KGdMzONQm"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Experimental Clock</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/BoAeezQer"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Exquisite Corpse</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/kPARzVXDJ"></iframe>
+               </div>
+               <div class="project">
+                   <h3>Face Generator</h3>
+                   <iframe src="https://editor.p5js.org/victoriagodinho/full/bNASTT9nO"></iframe>
+               </div>
+
+           </div>
+
+           <!-- Back Button -->
+           <div class="prototype-button-container">
+               <a href="works.html" class="prototype-button">← Back to Works</a>
+           </div>
+       </div>
+   </div>
+
+   <!-- Footer -->
+   <footer>
+      <div class="left">VG</div>
+      <div class="center">© 2025 Victoria Godinho. All rights reserved.</div>
+      <div class="right">
+         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+         <a href="https://github.com" target="_blank">GitHub</a>
+         <a href="mailto:victoriagodinho2005@gmail.com">Email</a>
+      </div>
+   </footer>
+</body>
+</html>
