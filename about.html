@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>My Portfolio</title>
-   <link rel="stylesheet" href="style.css">
+   <title>About - Victoria Godinho</title>
    <style>
+      /* Reset + structure */
+      html, body {
+         height: 100%;
+         margin: 0;
+         display: flex;
+         flex-direction: column;
+         font-family: 'Inter Variable', sans-serif;
+         background: rgb(0, 0, 0);
+         position: relative; /* stacking context */
+         z-index: 0;
+      }
+
+      body, h1, h2, h3, h4, h5, h6, p, li, strong {
+         color: #fff !important;
+      }
+
+      .main {
+         flex: 1; /* pushes footer down */
+         position: relative;
+         z-index: 1; /* keeps main above bubbles */
+      }
+
       /* Navbar */
-.navbar {
-    width: 86%;
-    display: flex;
-    margin: auto;
-    padding: 15px 0;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
-}
+      .navbar {
+         width: 86%;
+         display: flex;
+         margin: auto;
+         padding: 15px 0;
+         align-items: center;
+         justify-content: space-between;
+         z-index: 2;
+         position: relative;
+      }
 
-ul {
-    margin-top: -4%;
-}
+      .navbar ul {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+      }
 
-ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 10px 16px;
-}
+      .navbar ul li {
+         display: inline-block;
+         padding: 10px 16px;
+      }
 
-ul li a {
-    font-family: 'Inter Variable', sans-serif; 
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff; 
-    margin-top: -3%;
-    transition: 0.4s ease;
-}
+      .navbar ul li a {
+         font-size: 16px;
+         font-weight: bold;
+         text-decoration: none;
+         color: #6142f4;
+         margin-top: -3%;
+         transition: 0.4s ease;
+      }
 
-ul li a:hover {
-    color: #f442bc !important; /* pink hover */
-    transform: scale(1.1); /* smooth grow */
-}
+      .navbar ul li a:hover {
+         color: #f442bc !important;
+         transform: scale(1.1);
+      }
 
       .logo {
          width: 180px;
@@ -47,80 +69,200 @@ ul li a:hover {
          margin-top: 1%;
       }
 
+      /* Floating images background */
+      .floating-container {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         overflow: hidden;
+         z-index: 0; /* show behind content, above body */
+         pointer-events: none; /* avoid blocking clicks */
+      }
+
+      .floating-image {
+         position: absolute;
+         border-radius: 50%;
+         background-size: cover;
+         background-position: center;
+         opacity: 0;
+         animation: floatUp linear infinite;
+         animation-fill-mode: both;
+      }
+
+      @keyframes floatUp {
+         0% { transform: translateY(100vh) scale(1); opacity: 0; }
+         10% { opacity: 0.3; }
+         50% { opacity: 0.8; }
+         100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
+      }
+
+      @keyframes floatUpMid {
+         0% { transform: translateY(60vh) scale(1); opacity: 0; }
+         10% { opacity: 0.3; }
+         50% { opacity: 0.8; }
+         100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
+      }
+
+      /* About section */
+      .about-info {
+         display: flex;
+         align-items: center;         
+         justify-content: center;     
+         gap: 50px;
+         min-height: 70vh;
+         max-width: 1100px;
+         margin: auto;
+         line-height: 1.6;
+         background: rgba(0, 0, 0, 0);
+         border-radius: 12px;
+         box-sizing: border-box;
+         position: relative;
+         z-index: 1;
+      }
+
+      .about-photo img {
+         width: 350px;
+         height: 350px;
+         object-fit: cover;
+         border-radius: 50%;
+         box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      }
+
+      .about-text {
+         max-width: 500px;
+         text-align: left;
+      }
+
+      .about-text h2 {
+         font-size: 2em;
+         margin-bottom: 20px;
+         position: relative;
+      }
+
+      /* Gradient underline */
+      .about-text h2::after {
+         content: "";
+         display: block;
+         width: 120px;
+         height: 4px;
+         margin: 10px 0 0;
+         border-radius: 2px;
+         background: linear-gradient(45deg, #6142f4, #e4507e, #de6c00);
+         background-size: 300% 300%;
+         animation: gradientShift 5s ease infinite;
+      }
+
+      @keyframes gradientShift {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+      .about-text p {
+         font-size: 1em;
+         margin-bottom: 15px;
+      }
+
       /* Footer */
-footer {
-    background-color: #6142f4;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    font-size: 14px;
-    width: 100%;
-    margin-top: 40px;
-    box-sizing: border-box;
-    font-family: 'Inter Variable', sans-serif; /* FIXED font */
-}
+      footer {
+         background-color: #6142f4;
+         color: white;
+         display: flex;
+         align-items: center;
+         padding: 10px 20px;
+         font-size: 14px;
+         width: 100%;
+         box-sizing: border-box;
+         font-family: 'Inter Variable', sans-serif;
+      }
 
-footer .left,
-footer .right {
-    flex: 1;
-}
+      footer .left,
+      footer .right {
+         flex: 1;
+      }
 
-footer .center {
-    text-align: center;
-}
+      footer .center {
+         text-align: center;
+      }
 
-footer .right {
-    text-align: right;
-}
+      footer .right {
+         text-align: right;
+      }
 
-footer .right a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-    font-size: 15px;
-    font-family: 'Inter Variable', sans-serif; /* ensure links match */
-    font-weight: 500;
-    transition: 0.3s;
-}
+      footer .right a {
+         color: white;
+         margin-left: 15px;
+         text-decoration: none;
+         font-size: 15px;
+         transition: 0.3s;
+      }
 
-footer .right a:hover {
-    color: #f442bc;
-}
-
+      footer .right a:hover {
+         color: #f442bc;
+      }
    </style>
 </head>
 <body>
-
-   <div class="gradient-container"></div>
+   <!-- Floating background -->
+   <div class="floating-container">
+      <div class="floating-image" style="width:120px; height:120px; left:5%; background-image:url('images/woman.HEIC'); animation: floatUp 28s linear infinite; animation-delay: 0s;"></div>
+      <div class="floating-image" style="width:140px; height:140px; left:20%; background-image:url('images/petpeeve.jpg'); animation: floatUpMid 30s linear infinite; animation-delay: 3s;"></div>
+      <div class="floating-image" style="width:100px; height:100px; left:35%; background-image:url('images/cata.JPG'); animation: floatUp 32s linear infinite; animation-delay: 6s;"></div>
+      <div class="floating-image" style="width:130px; height:130px; left:50%; background-image:url('images/grandma.jpg'); animation: floatUpMid 29s linear infinite; animation-delay: 9s;"></div>
+      <div class="floating-image" style="width:90px; height:90px; left:65%; background-image:url('images/grandpa.jpg'); animation: floatUp 31s linear infinite; animation-delay: 12s;"></div>
+      <div class="floating-image" style="width:160px; height:160px; left:80%; background-image:url('images/dog.jpg'); animation: floatUpMid 34s linear infinite; animation-delay: 15s;"></div>
+      <div class="floating-image" style="width:110px; height:110px; left:12%; background-image:url('images/house.PNG'); animation: floatUp 27s linear infinite; animation-delay: 2s;"></div>
+      <div class="floating-image" style="width:150px; height:150px; left:28%; background-image:url('images/arara.jpg'); animation: floatUpMid 33s linear infinite; animation-delay: 0s;"></div>
+      <div class="floating-image" style="width:150px; height:150px; left:44%; background-image:url('images/macaw.jpg'); animation: floatUp 29s linear infinite; animation-delay: 8s;"></div>
+      <div class="floating-image" style="width:100px; height:100px; left:60%; background-image:url('images/forest.jpg'); animation: floatUpMid 30s linear infinite; animation-delay: 11s;"></div>
+      <div class="floating-image" style="width:140px; height:140px; left:76%; background-image:url('images/asian.JPG'); animation: floatUp 28s linear infinite; animation-delay: 14s;"></div>
+      <div class="floating-image" style="width:95px; height:95px; left:15%; background-image:url('images/african.heic'); animation: floatUpMid 31s linear infinite; animation-delay: 4s;"></div>
+      <div class="floating-image" style="width:125px; height:125px; left:70%; background-image:url('images/paint.JPG'); animation: floatUp 30s linear infinite; animation-delay: 7s;"></div>
+      <div class="floating-image" style="width:125px; height:125px; left:70%; background-image:url('images/MAU.jpg'); animation: floatUp 25s linear infinite; animation-delay: 20s;"></div>
+      <div class="floating-image" style="width:125px; height:125px; left:3%; background-image:url('images/papi.jpg'); animation: floatUp 18s linear infinite; animation-delay: 17s;"></div>
+      <div class="floating-image" style="width:135px; height:135px; left:20%; background-image:url('images/IMG_4031.jpg'); animation: floatUp 20s linear infinite; animation-delay: 17s;"></div>
+      <div class="floating-image" style="width:125px; height:125px; left:70%; background-image:url('images/valentines.JPG'); animation: floatUp 30s linear infinite; animation-delay: 25s;"></div>
+   </div>
 
    <div class="main">
        <!-- Navbar -->
        <div class="navbar">
-          <img src="images/logo.png" class="logo">
-          <ul>
+           <img src="images/logo.png" class="logo">
+           <ul>
                <li><a href="index.html">HOME</a></li>
-               <li><a href="about.html">ABOUT</a></li>
+               <li><a href="about.html">ABOUT</a></li> 
                <li><a href="works.html">MY WORKS</a></li>
                <li><a href="contact.html">CONTACT</a></li>
-          </ul>       
+           </ul>
        </div>
 
-       <!-- Intro Info -->
-       <div class="info">
-         <h3 class="title-inter">
-            Hi, I am <span>Victoria Godinho</span>.
-         </h3>
-         <h2 class="inter-text">
-            Design & Technology student at Parsons School of Design, NYC.<br>
-            I am interested in UX design, creative coding, and building projects<br> 
-            that combine storytelling, interactivity, and typography.
-         </h2>
-       </div>
-
-       <!-- Image -->
-       <div class="image">
-          <img src="images/me.png" class="me">
+       <!-- About info -->
+       <div class="about-info">
+         <div class="about-photo">
+           <img src="images/eu.HEIC" alt="Victoria Godinho">
+         </div>
+         <div class="about-text">
+           <h2>ABOUT ME</h2>
+           <p>
+             Hi, my name is <strong>Victoria Godinho</strong>, and I’m pursuing a degree in 
+             <strong>Design and Technology</strong> at Parsons School of Design in New York City. 
+             My work lives at the intersection of <strong>UX design, storytelling, and creative coding</strong>.
+           </p>
+           <p>
+             I design and develop <strong>websites, apps, and interactive experiences</strong> that are both 
+             intuitive and visually engaging. With a background in <strong>art and illustration</strong>, I bring a strong 
+             visual sensibility into my projects, combining creative expression with technical execution. 
+             I enjoy working with <strong>Figma, Adobe Creative Suite, and Unity</strong>, as well as coding in 
+             <strong>JavaScript, HTML, and CSS</strong>.
+           </p>
+           <p>
+             Having lived in <strong>three different countries</strong>, I’ve learned to see the world through multiple perspectives. 
+             This experience shapes how I approach design and technology, as ways to connect cultures, 
+             tell stories, and build bridges between people. My projects often reflect this mix of influences.
+           </p>
+         </div>
        </div>
    </div>
 
@@ -134,7 +276,6 @@ footer .right a:hover {
          <a href="mailto:victoriagodinho2005@gmail.com">Email</a>
       </div>
    </footer>
-
-   <script src="script.js"></script> 
 </body>
 </html>
+
